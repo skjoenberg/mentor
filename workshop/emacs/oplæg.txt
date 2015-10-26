@@ -19,12 +19,13 @@ Modes
 Autocompletion
 . Company
 . Auto-complete
+. Yasnippet
 
 UI
 . Temaer
 . Andet
 
-keybindings
+Keybindings
 . Ændring af keybindings generelt
 
 . Anbefalinger
