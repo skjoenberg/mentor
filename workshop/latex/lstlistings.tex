@@ -7,7 +7,7 @@
 \lstset{basicstyle=\ttfamily,
   keywordstyle=\bfseries,
   showstringspaces=false,
-  numbers=left,
+%  numbers=left,
   breaklines=true,
   frame=simple,
   morekeywords={include, printf}
@@ -29,7 +29,13 @@
     }
 
 \begin{document}
-\lstinputlisting[language=FSharp]{fib.fs}
+
+\begin{figure}[H!]
+  \lstinputlisting[language=FSharp, firstline=5, lastline=10]{fib.fs}
+  \centering
+  \caption{Funktionen \texttt{fib}, linje 5-10 fra filen \textit{fib.fs}.}
+\end{figure}
+function
 \end{document}
 %%% Local Variables:
 %%% mode: latex
