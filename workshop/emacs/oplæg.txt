@@ -2,31 +2,143 @@
  ### EMACS WORKSHOP ###
 ######################
 
-Motivation
-. Workflow
+DISCLAIMER:
+Jeg har linux, så jeg er ikke så bekendt med Emacs til windows. Stort set alt vil være ens alligevel.
 
-. Customization
-.. .emacs
-.. emacs lisp
 
-Modes
-. Generelt
-.. Hvad er modes?
+## Motivation ##
+Hvorfor bruge emacs?
 
-. Anbefalinger
-.. Se "modes.el"
+-- Workflow --
+Emacs kan være meget hurtigt i bevæge sig i. Man vender sig til
+keybindings'ne efter noget tid også bliver mange ting lettere.
 
-Autocompletion
-. Company
-. Auto-complete
-. Yasnippet
+-- Customization --
+Det mest unikke ved emacs er, at det er utroligt konfigurérbart.
+Alt kan ændres og man kan kode funktionalitet til emacs, hvis man
+skulle få lyst til det.
 
-UI
-. Temaer
-. Andet
+--- .emacs      ---
+Konfigurationsfil der loades når emacs starter. Det er typisk her,
+at man vil have alle sine personlige indstillinger.
 
-Keybindings
-. Ændring af keybindings generelt
+--- emacs lisp  ---
+Dette er sproget, som emacs snakker. Vil man konfigurere emacs, så man
+man lære det basale i elisp (der minder om andre former for lisp).
 
-. Anbefalinger
-.. Se "movement.el"
+Lad os komme i gang med konfigurationsdelen:
+
+## Modes ##
+-- Generelt         --
+--- Hvad er modes? ---
+Modes fungerer ligesom man kender plugins til at muligt andet.
+De tilføjer noget funktionalitet, som man gerne vil have.
+
+--- Anbefalinger    ---
+(Se modes.el)
+Automatisk lukkede paranteser
+- Smart, da de alligevel skal lukkes på et tidspunkt.
+
+Automatic indentation
+- Fungerer generelt rimeligt godt.
+
+Highlight paranteser
+- Fantastisk når man har nestet 7 paranteser ((((((()))))))
+  og man ikke kan se, hvilken der mangler at blive lukket.
+
+Highlight nuværende linje
+- Kan give overblik.
+
+Vis linjenummer
+- Fantastisk når man leder efter fejl.
+  (M-g M-g kan benytes som "goto line")
+
+Pending delete mode - Sletter alt, der er markeret, når man skriver.
+- Sådan er det alle andre steder.
+
+Eldoc mode
+- Viser information omkring funktioner. Smart nogle gange.
+
+Replace tabs with spaces.
+- Alle hader tabs.
+
+Turn off bip warnings
+- I kender dem.
+
+Expand region
+- Meget smart til hurtig markering
+
+Multiple cursors
+- Smart hvis man skal ændre de samme ting et par steder.
+
+--- Installation    ---
+Man benytter generelt elpa, der er emacs-pakkesystem.
+Brug "M-x package-install" eller "M-x list-packages".
+
+## Autocompletion ##
+-- Company       --
+Fungerer rimeligt godt generelt og kan få en mere minimal ui end
+auto-complete mode.
+
+-- Auto-complete --
+Standard auto-completion med drop-down.
+
+-- Yasnippet --
+Lav snippets, der kommer frem ved tab. Jeg viser nogle eksempler.
+
+
+## UI ##
+-- Temaer --
+Man kan sagtens få andre temaer end det man starter med.
+
+-- Andet  --
+Jeg benytter centered-cursor og der er sikkert meget andet smart.
+
+
+## Keybindings ##
+-- Generelle keybindings  --
+.. Keybindings
+   Control (C), Meta/alt (M)
+
+... Gem / åben
+    Åben fil:                   C-x C-f (find)
+    Gem fil:                    C-x C-s (save)
+    Skriv fil:                  C-x C-w (write)
+
+... Split skærm
+    Vindue fuldskærm:           C-x 1
+    Vindue split horizontalt:   C-x 2
+    Vindue split vertikalt:     C-x 3
+    Skift vindue:               C-x C-o
+    Skift buffer:               C-x C-b
+
+... Søgning
+    Søg fremad:                 C-s (search)
+    Søg tilbage:                C-r (reversed search)
+
+... Random
+    Undo:                       C-_
+
+... Cursor bevægelse
+    Piletaster
+    Et tegn frem:               C-f (forward)
+    Et tegn tilbage:            C-b (backward)
+    En linje op:                C-p (previous)
+    En linje ned:               C-n (next)
+    Start af linje:             C-a (?)
+    Slutning af linje:          C-e (end)
+    Et ord frem:                M-f (forward)
+    Et ord tilbage:             M-b (backward)
+
+... Regioner
+    Marker region:              C-<space>
+    Fjern region:               C-w
+    Yank:                       C-y
+
+... Copy/Paste
+    Copy:                       C-w + C-y
+    Paste:                      C-y
+    Cua-mode:                   C-c, C-v
+
+-- Ændring af keybindings --
+Se eksempler fra "movement.el".
